@@ -32,3 +32,39 @@ function calculateRectangleArea(){
     const newElementSet = document.getElementById('new-Element-Set');
     newElementSet.innerText = totalRectangleArea;
 }
+//use common function
+function calculateParallelogramArea(){
+    const base = commonFunctionForAll('Parallelogram-height');
+
+    const height =  commonFunctionForAll('Parallelogram-width');
+    //calculate total
+    const multiply = base * height;
+    //set the value
+    setElementInnerText('Parallelogram-area', multiply);
+}
+//use ellipse card with common function
+function calculateEllipseArea(){
+    const large = commonFunctionForAll('Ellipse-large');
+    const short = commonFunctionForAll('Ellipse-short');
+    //calculate total
+    const total = 3.14 * large * short;
+    const totalTwo = total.toFixed(2)
+    //set the value
+    setElementInnerText('Ellipse-area', totalTwo);
+}
+
+
+
+
+// common function 
+function commonFunctionForAll(target){
+    const inputField = document.getElementById(target);
+    const inputFieldValue = inputField.value;
+    const input = parseFloat(inputFieldValue);
+    return input;
+}
+//common set value function
+function setElementInnerText(setTarget, area){
+    const element = document.getElementById(setTarget);
+    element.innerText = area;
+}
